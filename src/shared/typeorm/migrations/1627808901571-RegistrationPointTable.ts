@@ -21,6 +21,7 @@ export class RegistrationPointTable1627808901571 implements MigrationInterface {
           {
             name: 'email',
             type: 'varchar',
+            isUnique: true,
           },
           {
             name: 'curso',
