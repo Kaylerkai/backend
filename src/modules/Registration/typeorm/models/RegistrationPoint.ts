@@ -12,25 +12,13 @@ export default class RegistionPoint {
   id: number;
 
   @Column()
-  namePoint: string;
+  name: string;
 
   @Column()
-  latitude: number;
+  email: string;
 
   @Column()
-  longitude: number;
-
-  @Column()
-  about: string;
-
-  @Column()
-  whatsapp: number;
-
-  @Column({ name: 'responsible_name' }) // js pattern
-  responsibleName: string;
-
-  @Column()
-  typePoint: string;
+  curso: string;
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;

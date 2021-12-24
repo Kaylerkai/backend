@@ -15,35 +15,15 @@ export class RegistrationPointTable1627808901571 implements MigrationInterface {
             generationStrategy: 'increment',
           },
           {
-            name: 'namePoint', //nome do ponto
+            name: 'name',
             type: 'varchar',
           },
           {
-            name: 'latitude',
-            type: 'decimal',
-            scale: 6,
-            precision: 10,
-          },
-          {
-            name: 'longitude',
-            type: 'decimal',
-            scale: 6,
-            precision: 10,
-          },
-          {
-            name: 'about', // descrição do ponto
-            type: 'text',
-          },
-          {
-            name: 'whatsapp', //contato
+            name: 'email',
             type: 'varchar',
           },
           {
-            name: 'responsible_name', //nome da pessoa ou da orng
-            type: 'varchar',
-          },
-          {
-            name: 'typePoint', // se é um ponto de vacina ou local de distribuição
+            name: 'curso',
             type: 'varchar',
           },
           {

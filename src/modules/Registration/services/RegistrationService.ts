@@ -5,45 +5,32 @@ import RegistionPoint from '@modules/Registration/typeorm/models/RegistrationPoi
 import { RegistionPointRepository } from '@modules/Registration/typeorm/repositories/RegistrationRepository';
 
 interface IRequest {
-  namePoint: string;
-  latitude: number;
-  longitude: number;
-  about: string;
-  whatsapp: number;
-  responsibleName: string;
-  typePoint: string;
+  name: string;
+  email: string;
+  curso: string;
 }
 
 export default class RegistrationPointService {
   public async execute({
-    responsibleName,
-    about,
-    latitude,
-    longitude,
-    namePoint,
-    typePoint,
-    whatsapp,
+    name,
+    email,
+    curso,
   }: IRequest): Promise<RegistionPoint> {
     const registionPointRepository = getCustomRepository(
       RegistionPointRepository,
     );
 
     const create = await registionPointRepository.create({
-      about,
-      latitude,
-      longitude,
-      namePoint,
-      responsibleName,
-      typePoint,
-      whatsapp,
+      name,
+      email,
+      curso,
     });
 
-    const findPoins = await registionPointRepository.find();
-
+    // const findPoins = await registionPointRepository.find();
     // for (let i = 0; i < findPoins.length; i++) {
     //   if (findPoins[i].latitude && findPoins[i].longitude) {
     //     throw new AppError(
-    //       `Ponto de registro ${create.namePoint} já cadastrado`,
+    //       `Ponto de registro ${create.name} já cadastrado`,
     //     );
     //   }
     // }

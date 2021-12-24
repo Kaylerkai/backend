@@ -7,26 +7,14 @@ import UpdateServie from '../services/UpdateService';
 
 export default class RegistionPointController {
   async create(request: Request, response: Response): Promise<Response> {
-    const {
-      about,
-      latitude,
-      longitude,
-      whatsapp,
-      typePoint,
-      namePoint,
-      responsibleName,
-    } = request.body;
+    const { name, email, curso } = request.body;
 
     const registionPoint = new RegistrationPointService();
 
     const register = await registionPoint.execute({
-      about,
-      latitude,
-      longitude,
-      whatsapp,
-      typePoint,
-      namePoint,
-      responsibleName,
+      name,
+      email,
+      curso,
     });
 
     return response.status(201).json(register);
@@ -55,15 +43,7 @@ export default class RegistionPointController {
   async update(request: Request, response: Response): Promise<Response> {
     const { id } = request.params;
 
-    const {
-      about,
-      latitude,
-      longitude,
-      namePoint,
-      responsibleName,
-      typePoint,
-      whatsapp,
-    } = request.body;
+    const { name, email, curso } = request.body;
 
     const updatePoint = new UpdateServie();
 
@@ -71,13 +51,9 @@ export default class RegistionPointController {
 
     const update = await updatePoint.execute({
       id: pointId,
-      about,
-      latitude,
-      longitude,
-      namePoint,
-      responsibleName,
-      typePoint,
-      whatsapp,
+      name,
+      email,
+      curso,
     });
 
     return response.status(200).json(update);
